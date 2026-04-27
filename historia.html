@@ -34,7 +34,9 @@
 </nav>
   </header>
 
-
+<div class="ruta-superior-wrap">
+  <a href="proceso.html" class="btn-ruta-superior">Ir a Proceso</a>
+</div>
 
   <!-- CONTENIDO -->
 <main class="contenedor-historia-premium">
@@ -714,7 +716,26 @@
   <footer>
     <p>© 2026 - Código Cafetero | Historia, cultura y aprendizaje del café</p>
   </footer>
+<button id="btnSubirArriba" class="btn-subir-arriba" title="Volver arriba">↑</button>
 
+<script>
+  const btnSubirArriba = document.getElementById("btnSubirArriba");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      btnSubirArriba.classList.add("mostrar");
+    } else {
+      btnSubirArriba.classList.remove("mostrar");
+    }
+  });
+
+  btnSubirArriba.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+</script>
 </body>
 
 </html>
