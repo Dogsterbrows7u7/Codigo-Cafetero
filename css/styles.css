@@ -261,7 +261,7 @@ section {
 
 
 .descripcion-seccion {
-  color: #5e5147;
+  color: #ffffff;
 }
 
 /* DOBLE */
@@ -313,9 +313,9 @@ section {
 
 /* MAPA */
 .seccion-mapa {
-  background: rgba(255, 253, 253, 0.7);
-  border-radius: 28px;
-  padding: 2rem;
+  background: rgb(0, 0, 0);
+  border-radius: 100px;
+  padding: 3rem;
   box-shadow: var(--sombra);
 }
 
@@ -3052,3 +3052,614 @@ bottom: 320px;
   pointer-events: none;
   display: block;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.contenedor-historia-premium {
+  width: min(1450px, 94%);
+  margin: 0 auto;
+  padding: 3rem 0 5rem;
+}
+
+.historia-hero-premium {
+  background: linear-gradient(135deg, #f8f1e5, #efe3cf);
+  border-radius: 30px;
+  padding: 4rem 3rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 14px 35px rgba(0,0,0,0.08);
+}
+
+.historia-hero-contenido {
+  max-width: 900px;
+}
+
+.historia-hero-premium h1 {
+  font-size: clamp(2.8rem, 5vw, 5rem);
+  line-height: 0.96;
+  margin-bottom: 1rem;
+  color: var(--vino);
+}
+
+.hero-intro {
+  font-size: 1.1rem;
+  line-height: 1.9;
+  color: #4c4138;
+  max-width: 760px;
+}
+
+.historia-bloque {
+  display: grid;
+  grid-template-columns: 1.2fr 0.75fr;
+  gap: 2rem;
+  align-items: start;
+  margin-bottom: 3rem;
+}
+
+.historia-bloque--invertido {
+  grid-template-columns: 0.75fr 1.2fr;
+}
+
+.historia-bloque--invertido .historia-bloque__texto {
+  order: 2;
+}
+
+.historia-bloque--invertido .historia-bloque__apoyo {
+  order: 1;
+}
+
+.historia-bloque__texto {
+  background: #ffffff00;
+  border-radius: 26px;
+  padding: 2.2rem;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.07);
+  border: 1px solid rgba(160, 119, 86, 0.12);
+}
+
+.historia-bloque__texto h2 {
+  font-size: clamp(2rem, 3vw, 3rem);
+  margin-bottom: 1rem;
+}
+
+.historia-bloque__texto p {
+  color: #4b4038;
+  line-height: 1.9;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.historia-bloque__apoyo {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.media-card {
+  background: #fffdf900;
+  border-radius: 22px;
+  padding: 1.2rem;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.07);
+  border: 1px solid rgba(160,119,86,0.12);
+}
+
+.media-card h3 {
+  margin-bottom: 0.8rem;
+  color: var(--vino);
+}
+
+.media-card ul {
+  padding-left: 1.1rem;
+  margin: 0;
+}
+
+.media-card li {
+  margin-bottom: 0.6rem;
+  line-height: 1.7;
+}
+
+.media-card--grande {
+  padding: 0;
+  overflow: hidden;
+}
+
+.media-card--grande img {
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  object-fit: cover;
+  display: block;
+}
+
+.media-card--video,
+.media-card--pdf {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.media-boton {
+  display: inline-block;
+  text-decoration: none;
+  background: var(--vino);
+  color: #fff;
+  padding: 0.85rem 1rem;
+  border-radius: 12px;
+  font-weight: 700;
+  transition: 0.25s ease;
+  text-align: center;
+}
+
+.media-boton:hover {
+  background: #7f0d11;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.historia-info-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  background: linear-gradient(135deg, #fffaf200, #f5ead7);
+  border-radius: 26px;
+  padding: 2rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.07);
+}
+
+.info-col h3 {
+  color: var(--vino);
+  margin-bottom: 1rem;
+}
+
+.info-col ul {
+  padding-left: 1.2rem;
+}
+
+.info-col li {
+  margin-bottom: 0.7rem;
+  line-height: 1.7;
+}
+
+.historia-tabs-cultura {
+  margin-top: 4rem;
+}
+
+.cultura-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.cultura-card {
+  background: #00000000;
+  border-radius: 24px;
+  padding: 1.8rem;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.07);
+  border: 1px solid rgba(160,119,86,0.12);
+}
+
+.cultura-card h3 {
+  color: var(--vino);
+  margin-bottom: 1rem;
+}
+
+.cultura-card p {
+  color: #4b4038;
+  line-height: 1.85;
+  margin-bottom: 1rem;
+}
+
+.cultura-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 1100px) {
+  .historia-bloque,
+  .historia-bloque--invertido,
+  .historia-info-box,
+  .cultura-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .historia-bloque--invertido .historia-bloque__texto,
+  .historia-bloque--invertido .historia-bloque__apoyo {
+    order: unset;
+  }
+}
+
+@media (max-width: 768px) {
+  .contenedor-historia-premium {
+    width: min(96%, 100%);
+  }
+
+  .historia-hero-premium {
+    padding: 2rem 1.3rem;
+  }
+
+  .historia-bloque__texto,
+  .media-card,
+  .cultura-card {
+    padding: 1.3rem;
+  }
+}
+
+.media-youtube {
+  width: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.10);
+  background: #000;
+}
+
+.media-youtube iframe {
+  width: 100%;
+  height: 240px;
+  border: none;
+  display: block;
+}
+
+
+/* =========================
+   PROCESO PREMIUM
+========================= */
+
+.proceso-premium-main {
+  width: min(1450px, 94%);
+  margin: 0 auto;
+  padding: 3rem 0 5rem;
+}
+
+.proceso-hero {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 2rem;
+  align-items: stretch;
+  margin-bottom: 3rem;
+}
+
+.proceso-hero__texto {
+  background: linear-gradient(135deg, #fffaf2, #f3e4cd);
+  border-radius: 30px;
+  padding: 3rem;
+  box-shadow: 0 14px 35px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.proceso-hero__texto h1 {
+  font-size: clamp(2.8rem, 5vw, 5rem);
+  line-height: 0.95;
+  margin-bottom: 1rem;
+}
+
+.proceso-hero__intro {
+  font-size: 1.08rem;
+  line-height: 1.9;
+  color: #4d4239;
+  max-width: 720px;
+}
+
+.proceso-hero__media {
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 14px 35px rgba(0,0,0,0.10);
+}
+
+.proceso-hero__media img {
+  width: 100%;
+  height: 100%;
+  min-height: 480px;
+  object-fit: cover;
+  display: block;
+}
+
+.proceso-bloque {
+  margin-bottom: 3rem;
+}
+
+.proceso-bloque--doble {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 1.8rem;
+  align-items: stretch;
+}
+
+.proceso-bloque--doble.invertido {
+  grid-template-columns: 0.85fr 1.15fr;
+}
+
+.proceso-card {
+  border-radius: 26px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.07);
+  border: 1px solid rgba(160, 119, 86, 0.12);
+  background: #fffdf9;
+}
+
+.proceso-card--texto {
+  padding: 2.2rem;
+}
+
+.proceso-card--texto h2 {
+  font-size: clamp(1.9rem, 3vw, 2.8rem);
+  margin-bottom: 1rem;
+}
+
+.proceso-card--texto p {
+  line-height: 1.9;
+  color: #4d4239;
+  margin-bottom: 1rem;
+}
+
+.proceso-card--imagen img {
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  object-fit: cover;
+  display: block;
+}
+
+.proceso-bloque--franja {
+  background: linear-gradient(135deg, #fffdf8, #f5ebdb);
+  border-radius: 28px;
+  padding: 2rem;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.07);
+  margin-bottom: 3rem;
+}
+
+.franja-contenido {
+  display: grid;
+  grid-template-columns: 1fr 0.9fr;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.franja-texto h2 {
+  margin-bottom: 1rem;
+}
+
+.franja-texto p {
+  line-height: 1.9;
+  color: #4d4239;
+  margin-bottom: 1rem;
+}
+
+.franja-media {
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 10px 26px rgba(0,0,0,0.09);
+}
+
+.franja-media img {
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  object-fit: cover;
+  display: block;
+}
+
+.proceso-grid-etapas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.proceso-grid-etapas--dos {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.etapa-card {
+  background: #fffdf9;
+  border-radius: 24px;
+  padding: 1.8rem;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.07);
+  border: 1px solid rgba(160,119,86,0.12);
+}
+
+.etapa-numero {
+  display: inline-flex;
+  width: 42px;
+  height: 42px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--vino);
+  color: white;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.etapa-card h3 {
+  color: var(--vino);
+  margin-bottom: 0.8rem;
+  font-size: 1.35rem;
+}
+
+.etapa-card p {
+  color: #4d4239;
+  line-height: 1.85;
+  margin-bottom: 1rem;
+}
+
+.proceso-video-premium {
+  margin-bottom: 3rem;
+}
+
+.proceso-video-premium__box {
+  width: 100%;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 14px 32px rgba(0,0,0,0.10);
+  background: #000;
+}
+
+.proceso-video-premium__box iframe {
+  width: 100%;
+  height: 560px;
+  border: none;
+  display: block;
+}
+
+.proceso-conclusion {
+  background: linear-gradient(135deg, #f8f1e4, #efe0c5);
+  border-radius: 28px;
+  padding: 2.5rem;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.07);
+}
+
+.proceso-conclusion h2 {
+  margin-bottom: 1rem;
+}
+
+.proceso-conclusion p {
+  color: #4d4239;
+  line-height: 1.9;
+  max-width: 900px;
+}
+
+@media (max-width: 1100px) {
+  .proceso-hero,
+  .proceso-bloque--doble,
+  .proceso-bloque--doble.invertido,
+  .franja-contenido,
+  .proceso-grid-etapas,
+  .proceso-grid-etapas--dos {
+    grid-template-columns: 1fr;
+  }
+
+  .proceso-video-premium__box iframe {
+    height: 360px;
+  }
+}
+
+@media (max-width: 768px) {
+  .proceso-premium-main {
+    width: min(96%, 100%);
+    padding-top: 2rem;
+  }
+
+  .proceso-hero__texto,
+  .proceso-card--texto,
+  .proceso-bloque--franja,
+  .etapa-card,
+  .proceso-conclusion {
+    padding: 1.4rem;
+  }
+
+  .proceso-hero__media img,
+  .proceso-card--imagen img,
+  .franja-media img {
+    min-height: 260px;
+  }
+
+  .proceso-video-premium__box iframe {
+    height: 260px;
+  }
+}
+
+/* =========================
+   JUEGO FINAL EN PROCESO
+========================= */
+
+.proceso-juego-final {
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+}
+
+.proceso-juego-final__head {
+  max-width: 860px;
+  margin-bottom: 1.8rem;
+}
+
+.proceso-juego-final__marco {
+  background: linear-gradient(135deg, #fffaf2, #f3e3cb);
+  border-radius: 30px;
+  padding: 1.5rem;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(160, 119, 86, 0.16);
+}
+
+.proceso-juego-final__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.proceso-juego-final__info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.proceso-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  background: #fffdf9;
+  color: var(--vino);
+  font-weight: 700;
+  font-size: 0.9rem;
+  border: 1px solid rgba(154, 16, 20, 0.12);
+}
+
+.proceso-juego-final__nota {
+  margin: 0;
+  color: #5b4e44;
+  font-size: 0.95rem;
+}
+
+.juego-embed {
+  width: 100%;
+height: 1650px;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.12);
+  background: #000;
+}
+
+.juego-embed iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+@media (max-width: 1100px) {
+  .juego-embed--proceso {
+    height: 1050px;
+  }
+}
+
+@media (max-width: 768px) {
+  .proceso-juego-final__marco {
+    padding: 1rem;
+  }
+
+  .juego-embed--proceso {
+    height: 850px;
+    border-radius: 20px;
+  }
+}
+
