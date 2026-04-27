@@ -4,7 +4,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Código Cafetero | Mapa del Tesoro Cafetero</title>
+  <title>Katurro | Mapa del Tesoro Cafetero</title>
 
   <link rel="icon" href="../assets/images/icono.png" type="image/png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -16,20 +16,29 @@
 
 <body>
 
+    <!-- ENCABEZADO -->
   <header class="hero">
-    <nav class="barra-superior">
-      <a href="../index.html" class="logo-link">
-        <img src="../assets/images/Logo actualizado (1) (1).png" alt="Código Cafetero" class="logo-nav">
-      </a>
 
-      <ul class="menu">
-        <li><a href="historia.html">Historia</a></li>
-        <li><a href="proceso.html">Proceso</a></li>
-        <li><a href="caracteristicas.html">Características</a></li>
-        <li><a href="mapa.html">Mapa</a></li>
-        <li><a href="galeria.html">Galería</a></li>
-        <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
-        <li><a href="actividades.html">Actividades</a></li>
+    <nav class="barra-superior">
+     <a href="index.html" class="logo-link">
+        <img src="assets/images/Logo actualizado (1) (1).png" alt="Katurro" class="logo-nav">
+      </a>
+      <ul class="menu nav-menu">
+        <li><a href="pages/historia.html">Historia</a></li>
+        <li><a href="pages/proceso.html">Proceso</a></li>
+        <li><a href="pages/mapa.html">Mapa</a></li>
+        <li><a href="pages/galeria.html">Galería</a></li>
+        <li><a href="pages/sobre-nosotros.html">Sobre Nosotros</a></li>
+        <li class="nav-item-dropdown">
+          <a href="#" class="nav-link-dropdown">Actividades</a>
+            <ul class="dropdown-submenu">
+              <li><a href="actividades.html">Lista de Actividades</a></li>
+              <li><a href="mapa-tesoro.html">Reto: Mapa del Tesoro</a></li>
+              <li><a href="cata-cafetera.html">Simulador de Cata</a></li>
+              <li><a href="formulario.html">Formulario: Taza Cafetera</a></li>
+            </ul>
+       </li>
+        <li><a href="pages/caracteristicas.html">Características</a></li>
       </ul>
     </nav>
   </header>
@@ -86,130 +95,12 @@
   </main>
 
   <footer>
-    <p>© 2026 - Código Cafetero | Historia, cultura y aprendizaje del café</p>
+    <p>© 2026 - Katurro | Historia, cultura y aprendizaje del café</p>
   </footer>
 
- <script>
-const misiones = [
-  {
-    id: 1,
-    titulo: "ETAPA 1: EL ORIGEN (ALMÁCIGO)",
-    pregunta: "El viaje del café no empieza en la fábrica. ¿Dónde crees que se siembran las primeras semillas?",
-    imagenFondo: "url('images/etapa1.jpg')",
-    hotspots: [
-      { x: "25%", y: "60%", texto: "A", esCorrecto: false, feedback: "Esos son cafetos adultos listos para cosechar, el origen es más pequeño." },
-      { x: "75%", y: "45%", texto: "B", esCorrecto: true, feedback: "¡Exacto! El almácigo es el semillero donde las chapolas comienzan su vida." },
-      { x: "45%", y: "25%", texto: "C", esCorrecto: false, feedback: "Esa es la vivienda del caficultor, busquemos en la tierra." }
-    ]
-  },
-  {
-    id: 2,
-    titulo: "ETAPA 2: LA RECOLECCIÓN",
-    pregunta: "Para una taza cafetera de calidad, ¿qué frutos debemos recolectar?",
-    imagenFondo: "url('images/etapa2.jpg')",
-    hotspots: [
-      { x: "30%", y: "50%", texto: "A", esCorrecto: false, feedback: "Los granos verdes darán un sabor amargo y astringente. Intenta otra vez." },
-      { x: "80%", y: "55%", texto: "B", esCorrecto: true, feedback: "¡Así es! Solo los frutos maduros, de color rojo cereza, tienen el azúcar ideal." }
-    ]
-  },
-  {
-    id: 3,
-    titulo: "ETAPA 3: EL BENEFICIO",
-    pregunta: "¿En qué lugar se retira la pulpa y se lava el grano antes de secarlo?",
-    imagenFondo: "url('images/etapa3.jpg')",
-    hotspots: [
-      { x: "50%", y: "45%", texto: "A", esCorrecto: true, feedback: "¡Correcto! En el beneficiadero se procesa el fruto para extraer la almendra." },
-      { x: "85%", y: "70%", texto: "B", esCorrecto: false, feedback: "Ese es el patio de secado. Allí llegan después de ser lavados." }
-    ]
-  }
-];
 
-let indexActual = 0;
-
-document.addEventListener("DOMContentLoaded", () => {
-  const screenIntro = document.getElementById("screen-intro");
-  const screenGame = document.getElementById("screen-game");
-  const screenFeedback = document.getElementById("screen-feedback");
-  const interactiveMap = document.getElementById("interactive-map");
-  const interfazInferior = document.querySelector(".interfaz-juego");
-
-  const btnStart = document.getElementById("btn-start");
-  const btnNext = document.getElementById("btn-next");
-  const btnRetry = document.getElementById("btn-retry");
-
-  const missionTitle = document.getElementById("mission-title");
-  const questionText = document.getElementById("question-text");
-  const feedbackTitle = document.getElementById("feedback-title");
-  const feedbackText = document.getElementById("feedback-text");
-  const feedbackIcon = document.getElementById("feedback-icon");
-
-  function cargarMision() {
-    const mision = misiones[indexActual];
-    missionTitle.textContent = mision.titulo;
-    questionText.textContent = mision.pregunta;
-    interactiveMap.style.backgroundImage = mision.imagenFondo;
-    interactiveMap.innerHTML = "";
-
-    mision.hotspots.forEach((h) => {
-      const punto = document.createElement("div");
-      punto.className = "hotspot";
-      punto.style.left = h.x;
-      punto.style.top = h.y;
-      punto.textContent = h.texto;
-      punto.addEventListener("click", () => procesarRespuesta(h));
-      interactiveMap.appendChild(punto);
-    });
-  }
-
-  function procesarRespuesta(hotspot) {
-    feedbackTitle.textContent = hotspot.esCorrecto ? "¡Muy bien!" : "Inténtalo de nuevo";
-    feedbackText.textContent = hotspot.feedback;
-    feedbackIcon.textContent = hotspot.esCorrecto ? "✓" : "✕";
-
-    btnNext.style.display = hotspot.esCorrecto ? "inline-block" : "none";
-    btnRetry.style.display = hotspot.esCorrecto ? "none" : "inline-block";
-
-    screenFeedback.classList.add("active");
-    if (interfazInferior) {
-      interfazInferior.style.opacity = "0";
-      interfazInferior.style.pointerEvents = "none";
-    }
-  }
-
-  function siguientePaso() {
-    indexActual++;
-    screenFeedback.classList.remove("active");
-
-    if (interfazInferior) {
-      interfazInferior.style.opacity = "1";
-      interfazInferior.style.pointerEvents = "auto";
-    }
-
-    if (indexActual < misiones.length) {
-      cargarMision();
-    } else {
-      alert("¡Felicidades! Has completado todas las etapas.");
-      window.location.href = "actividades.html";
-    }
-  }
-
-  btnStart.addEventListener("click", () => {
-    screenIntro.classList.remove("active");
-    screenGame.classList.add("active");
-    cargarMision();
-  });
-
-  btnRetry.addEventListener("click", () => {
-    screenFeedback.classList.remove("active");
-    if (interfazInferior) {
-      interfazInferior.style.opacity = "1";
-      interfazInferior.style.pointerEvents = "auto";
-    }
-  });
-
-  btnNext.addEventListener("click", siguientePaso);
-});
-</script>
+  <script src=".../assets/js/mapa-tesoro.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/navbar.js"></script>
 </body>
 </html>

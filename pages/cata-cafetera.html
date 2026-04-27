@@ -4,7 +4,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Código Cafetero | Simulador de Cata</title>
+  <title>Katurro | Simulador de Cata</title>
 
   <link rel="icon" href="../assets/images/icono.png" type="image/png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -14,20 +14,29 @@
 
 <body>
 
+    <!-- ENCABEZADO -->
   <header class="hero">
-    <nav class="barra-superior">
-      <a href="../index.html" class="logo-link">
-        <img src="../assets/images/Logo actualizado (1) (1).png" alt="Código Cafetero" class="logo-nav">
-      </a>
 
-      <ul class="menu">
-        <li><a href="historia.html">Historia</a></li>
-        <li><a href="proceso.html">Proceso</a></li>
-        <li><a href="caracteristicas.html">Características</a></li>
-        <li><a href="mapa.html">Mapa</a></li>
-        <li><a href="galeria.html">Galería</a></li>
-        <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
-        <li><a href="actividades.html">Actividades</a></li>
+    <nav class="barra-superior">
+     <a href="index.html" class="logo-link">
+        <img src="assets/images/Logo actualizado (1) (1).png" alt="Katurro" class="logo-nav">
+      </a>
+      <ul class="menu nav-menu">
+        <li><a href="pages/historia.html">Historia</a></li>
+        <li><a href="pages/proceso.html">Proceso</a></li>
+        <li><a href="pages/mapa.html">Mapa</a></li>
+        <li><a href="pages/galeria.html">Galería</a></li>
+        <li><a href="pages/sobre-nosotros.html">Sobre Nosotros</a></li>
+        <li class="nav-item-dropdown">
+          <a href="#" class="nav-link-dropdown">Actividades</a>
+            <ul class="dropdown-submenu">
+              <li><a href="actividades.html">Lista de Actividades</a></li>
+              <li><a href="mapa-tesoro.html">Reto: Mapa del Tesoro</a></li>
+              <li><a href="cata-cafetera.html">Simulador de Cata</a></li>
+              <li><a href="formulario.html">Formulario: Taza Cafetera</a></li>
+            </ul>
+       </li>
+        <li><a href="pages/caracteristicas.html">Características</a></li>
       </ul>
     </nav>
   </header>
@@ -127,118 +136,11 @@
   </main>
 
   <footer>
-    <p>© 2026 - Código Cafetero | Historia, cultura y aprendizaje del café</p>
+    <p>© 2026 - Katurro | Historia, cultura y aprendizaje del café</p>
   </footer>
 
-  <script>
-    const screenIntro = document.getElementById('screen-intro');
-    const screenMision1 = document.getElementById('screen-mision1');
-    const screenMision2 = document.getElementById('screen-mision2');
-    const screenMision3 = document.getElementById('screen-mision3');
-    const modalFeedback = document.getElementById('modal-feedback');
-
-    const fbIcon = document.getElementById('fb-icon');
-    const fbTitle = document.getElementById('fb-title');
-    const fbText = document.getElementById('fb-text');
-    const fbBtn = document.getElementById('fb-btn');
-    const coffeeLiquid = document.getElementById('coffee-liquid');
-
-    let isSliderMoved = false;
-
-    function iniciarJuego() {
-      screenIntro.classList.remove('active');
-      screenMision1.classList.add('active');
-    }
-
-    function actualizarCafe(valor) {
-      isSliderMoved = true;
-
-      const r = Math.floor(195 - (valor / 100) * 169);
-      const g = Math.floor(154 - (valor / 100) * 139);
-      const b = Math.floor(107 - (valor / 100) * 97);
-
-      coffeeLiquid.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
-    }
-
-    function verificarRespuesta(mision, respuesta) {
-      if (mision === 1) {
-        if (!isSliderMoved && respuesta === 'tueste') {
-          mostrarFeedback(false, "Antes de responder, mueve el control para ver cómo cambia la bebida.", () => cerrarModal());
-          return;
-        }
-
-        if (respuesta === 'tueste') {
-          mostrarFeedback(true, "¡Exacto! La sensación de café 'cargado' o muy amargo suele relacionarse con un tueste oscuro.", () => avanzar(2));
-        } else if (respuesta === 'cafeina') {
-          mostrarFeedback(false, "Muchos creen eso, pero la cafeína no define por sí sola la sensación de cuerpo o contundencia.", () => cerrarModal());
-        } else {
-          mostrarFeedback(false, "El agua influye en la preparación, pero aquí la clave está en el tueste.", () => cerrarModal());
-        }
-      }
-
-      else if (mision === 2) {
-        if (respuesta === 'flor') {
-          mostrarFeedback(true, "¡Magnífico! Los cafés finos de nuestra región suelen destacar por notas florales, dulces y afrutadas.", () => avanzar(3));
-        } else if (respuesta === 'ceniza') {
-          mostrarFeedback(false, "Ese olor aparece cuando el café se quema o se tuesta mal. Un buen café no debe saber a quemado.", () => cerrarModal());
-        } else {
-          mostrarFeedback(false, "La madera seca puede indicar granos viejos o mal almacenados. Buscamos un perfil más vivo y dulce.", () => cerrarModal());
-        }
-      }
-
-      else if (mision === 3) {
-        if (respuesta === 'hirviendo') {
-          mostrarFeedback(true, "¡Correcto! El agua hirviendo destruye aromas y deja un sabor más amargo. Lo ideal es usar agua bien caliente, antes de hervir.", finalizarJuego);
-        } else if (respuesta === 'caliente') {
-          mostrarFeedback(false, "Esa es justamente la temperatura ideal. Buscamos al enemigo del sabor, no al aliado.", () => cerrarModal());
-        } else {
-          mostrarFeedback(false, "El agua fría no quema el café. Incluso existe el café preparado en frío.", () => cerrarModal());
-        }
-      }
-    }
-
-    function mostrarFeedback(acierto, mensaje, accionOnClick) {
-      fbIcon.innerText = acierto ? "✓" : "✕";
-      fbTitle.innerText = acierto ? "¡Excelente!" : "Casi...";
-      fbText.innerText = mensaje;
-
-      if (acierto) {
-        fbBtn.innerText = "Siguiente";
-        fbBtn.className = "btn-cata";
-      } else {
-        fbBtn.innerText = "Volver a intentar";
-        fbBtn.className = "btn-cata";
-      }
-
-      fbBtn.onclick = accionOnClick;
-      modalFeedback.classList.remove('hidden');
-    }
-
-    function cerrarModal() {
-      modalFeedback.classList.add('hidden');
-    }
-
-    function avanzar(siguienteMision) {
-      cerrarModal();
-
-      if (siguienteMision === 2) {
-        screenMision1.classList.remove('active');
-        screenMision2.classList.add('active');
-      } else if (siguienteMision === 3) {
-        screenMision2.classList.remove('active');
-        screenMision3.classList.add('active');
-      }
-    }
-
-    function finalizarJuego() {
-      fbIcon.innerText = "★";
-      fbTitle.innerText = "¡Cata completada!";
-      fbText.innerText = "¡Enhorabuena! Has demostrado tener un paladar más atento. Ahora sabes distinguir mejor qué le da intensidad al café y qué aromas buscar.";
-      fbBtn.innerText = "Volver a Actividades";
-      fbBtn.className = "btn-cata";
-      fbBtn.onclick = () => window.location.href = "actividades.html";
-      modalFeedback.classList.remove('hidden');
-    }
-  </script>
+  <script src="../assets/js/cata.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <s|cript src="../assets/js/navbar.js"></script>
 </body>
 </html>

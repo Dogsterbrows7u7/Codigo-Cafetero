@@ -7,30 +7,40 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Código Cafetero - Proceso</title>
+  <title>katurro | Proceso</title>
   <link rel="icon" href="../assets/images/icono.png" type="image/png">
   <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
 
 <body>
 
+  <!-- ENCABEZADO -->
   <header class="hero">
-<nav class="barra-superior">
-  <a href="../index.html" class="logo-link">
-    <img src="../assets/images/Logo actualizado (1) (1).png" alt="Código Cafetero" class="logo-nav">
-  </a>
 
-  <ul class="menu">
-    <li><a href="historia.html">Historia</a></li>
-    <li><a href="proceso.html">Proceso</a></li>
-    <li><a href="mapa.html">Mapa</a></li>
-    <li><a href="galeria.html">Galería</a></li>
-    <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
-    <li><a href="actividades.html">Actividades</a></li>
-     <li><a href="caracteristicas.html">Características</a></li>
-  </ul>
-</nav>
+    <nav class="barra-superior">
+     <a href="index.html" class="logo-link">
+        <img src="assets/images/Logo actualizado (1) (1).png" alt="Katurro" class="logo-nav">
+      </a>
+      <ul class="menu nav-menu">
+        <li><a href="pages/historia.html">Historia</a></li>
+        <li><a href="pages/proceso.html">Proceso</a></li>
+        <li><a href="pages/mapa.html">Mapa</a></li>
+        <li><a href="pages/galeria.html">Galería</a></li>
+        <li><a href="pages/sobre-nosotros.html">Sobre Nosotros</a></li>
+        <li class="nav-item-dropdown">
+          <a href="#" class="nav-link-dropdown">Actividades</a>
+            <ul class="dropdown-submenu">
+              <li><a href="actividades.html">Lista de Actividades</a></li>
+              <li><a href="mapa-tesoro.html">Reto: Mapa del Tesoro</a></li>
+              <li><a href="cata-cafetera.html">Simulador de Cata</a></li>
+              <li><a href="formulario.html">Formulario: Taza Cafetera</a></li>
+            </ul>
+       </li>
+        <li><a href="pages/caracteristicas.html">Características</a></li>
+      </ul>
+    </nav>
   </header>
+  
 <div class="ruta-superior-wrap">
   <a href="caracteristicas.html" class="btn-ruta-superior">Ir a Características</a>
 </div>
@@ -313,41 +323,12 @@
 </main>
 
   <footer>
-    <p>© 2026 - Código Cafetero | Historia, cultura y aprendizaje del café</p>
+    <p>© 2026 - Katurro | Historia, cultura y aprendizaje del café</p>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    let slideActual = 0;
-    const track = document.getElementById("sliderTrack");
-    const slides = document.querySelectorAll(".slide-proceso");
-    const dots = document.querySelectorAll(".dot");
-
-    function actualizarSlider() {
-      track.style.transform = `translateX(-${slideActual * 100}%)`;
-      dots.forEach(dot => dot.classList.remove("activo"));
-      dots[slideActual].classList.add("activo");
-    }
-
-    function moverSlide(direccion) {
-      slideActual += direccion;
-
-      if (slideActual < 0) {
-        slideActual = slides.length - 1;
-      }
-
-      if (slideActual >= slides.length) {
-        slideActual = 0;
-      }
-
-      actualizarSlider();
-    }
-
-    function irSlide(indice) {
-      slideActual = indice;
-      actualizarSlider();
-    }
-  </script>
+  <script src="../assets/js/navbar.js"></script>
+  <script src="../assets/js/proceso.js"></script>
 
 </body>
 </html>

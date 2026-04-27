@@ -4,7 +4,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Código Cafetero | Formulario</title>
+  <title>Katurro | Formulario</title>
   <link rel="icon" href="../assets/images/icono.png" type="image/png">
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -16,20 +16,29 @@
 
 <body>
 
+    <!-- ENCABEZADO -->
   <header class="hero">
-    <nav class="barra-superior">
-      <a href="../index.html" class="logo-link">
-        <img src="../assets/images/Logo actualizado (1) (1).png" alt="Código Cafetero" class="logo-nav">
-      </a>
 
-      <ul class="menu">
-        <li><a href="historia.html">Historia</a></li>
-        <li><a href="proceso.html">Proceso</a></li>
-        <li><a href="caracteristicas.html">Características</a></li>
-        <li><a href="mapa.html">Mapa</a></li>
-        <li><a href="galeria.html">Galería</a></li>
-        <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
-        <li><a href="actividades.html">Actividades</a></li>
+    <nav class="barra-superior">
+     <a href="index.html" class="logo-link">
+        <img src="assets/images/Logo actualizado (1) (1).png" alt="Katurro" class="logo-nav">
+      </a>
+      <ul class="menu nav-menu">
+        <li><a href="pages/historia.html">Historia</a></li>
+        <li><a href="pages/proceso.html">Proceso</a></li>
+        <li><a href="pages/mapa.html">Mapa</a></li>
+        <li><a href="pages/galeria.html">Galería</a></li>
+        <li><a href="pages/sobre-nosotros.html">Sobre Nosotros</a></li>
+        <li class="nav-item-dropdown">
+          <a href="#" class="nav-link-dropdown">Actividades</a>
+            <ul class="dropdown-submenu">
+              <li><a href="actividades.html">Lista de Actividades</a></li>
+              <li><a href="mapa-tesoro.html">Reto: Mapa del Tesoro</a></li>
+              <li><a href="cata-cafetera.html">Simulador de Cata</a></li>
+              <li><a href="formulario.html">Formulario: Taza Cafetera</a></li>
+            </ul>
+       </li>
+        <li><a href="pages/caracteristicas.html">Características</a></li>
       </ul>
     </nav>
   </header>
@@ -102,47 +111,12 @@
   </main>
 
   <footer>
-    <p>© 2026 - Código Cafetero | Historia, cultura y aprendizaje del café</p>
+    <p>© 2026 - Katurro | Historia, cultura y aprendizaje del café</p>
   </footer>
 
-  <script>
-    function calcularResultado() {
-      let total = 0;
-      const preguntas = 5;
-
-      for (let i = 1; i <= preguntas; i++) {
-        const seleccion = document.querySelector(`input[name="q${i}"]:checked`);
-
-        if (seleccion) {
-          total += parseInt(seleccion.value);
-        } else {
-          alert("Por favor responde todas las preguntas.");
-          return;
-        }
-      }
-
-      const resultado = document.getElementById("result");
-      let mensaje = "";
-      let clase = "";
-
-      if (total >= 13) {
-        mensaje = "¡Excelente! El sitio del Eje Cafetero está muy bien aprendido 🌍✨";
-        clase = "high";
-      } else if (total >= 9) {
-        mensaje = "Vas por buen camino, pero aún puedes mejorar 🛠️📊";
-        clase = "medium";
-      } else {
-        mensaje = "Algo está mal y necesitas mejorar. Revisa el mapa, la galería y la claridad de la información para lograr un mejor aprendizaje. 🔍🌱";
-        clase = "low";
-      }
-
-      resultado.className = `resultado-formulario show ${clase}`;
-      resultado.innerHTML = `
-        <strong>Puntaje: ${total}/15</strong><br>${mensaje}<br><br>
-        <a href="actividades.html" class="btn-home-seccion">Volver a Actividades</a>
-      `;
-    }
-  </script>
+  <script src="../assets/js/formulario.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/navbar.js"></script>
 
 </body>
 </html>
